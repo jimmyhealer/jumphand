@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { LoginComponent } from '../user/login/login.component'
 import { UserService } from '../user/service/user.service'
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -19,15 +18,22 @@ export class HomeComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    let tmp = this.userService.getCuttentUser()
+    if(tmp === "admin" || tmp === "guest"){
+      this.now = 0;
+    }
+    else{
+      this.now = 1;
+    }
   }
 
   ngDocheck(): void{
     let tmp = this.userService.getCuttentUser()
     if(tmp === "admin" || tmp === "guest"){
-      this.now = 1;
+      this.now = 0;
     }
     else{
-      this.now = 0;
+      this.now = 1;
     }
   }
 

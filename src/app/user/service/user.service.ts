@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   currentUser = "";
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   login(data: any): Boolean{
     if(data.username === "admin" && data.password === "123456"){
@@ -25,5 +28,6 @@ export class UserService {
 
   logout(): void{
     this.currentUser = ""
+    this.router.navigate(['/'])
   }
 }

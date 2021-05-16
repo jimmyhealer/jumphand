@@ -20,14 +20,14 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/sale">Link</a>
+        <li class="nav-item" *ngIf="username">
+          <a class="nav-link" routerLink="/sale">拍賣平台</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link">
-            {{username}}
+          <a class="nav-link" (click)=(logout()) *ngIf="username">
+            {{username}}登出
           </a>
         </li>
       </ul>

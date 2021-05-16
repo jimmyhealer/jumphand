@@ -19,4 +19,8 @@ export class NavberComponent implements OnInit{
   ngDoCheck(): void {
     this.username = this.userService.getCuttentUser()
   }
+
+  logout(): void{
+    this.userService.logout();
+  }
 }
