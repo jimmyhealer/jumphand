@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10">
+      <mat-grid-list cols="5" rowHeight="2:3">
+        <mat-grid-tile *ngFor="let item of data">
+          <app-card [dataSource]="item"></app-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <div class="col-lg-2">
+      <div *ngIf="now">
+        <button (click)="openDashboard()" mat-stroked-button color="primary">新增漁獲</button>
+      </div>
+    </div>
+  </div>
+</div>
+  

@@ -1,0 +1,23 @@
+export let fishData =
+[
+    {"name":"彈塗魚","quantity":20,"price":30,"timelyPrice":30},
+    {"name":"烏仔魚","quantity":30,"price":30,"timelyPrice":30},
+    {"name":"小卷","quantity":600,"price":30,"timelyPrice":30},
+    {"name":"油魚","quantity":40,"price":20,"timelyPrice":20},
+    {"name":"鯁魚","quantity":70,"price":30,"timelyPrice":30},
+    {"name":"虱目魚","quantity":30,"price":70,"timelyPrice":70},
+    {"name":"鯽魚","quantity":40,"price":5,"timelyPrice":5},
+    {"name":"鯽魚","quantity":160,"price":13,"timelyPrice":13},
+    {"name":"白蝦","quantity":60,"price":15,"timelyPrice":15},
+    {"name":"圓鱈","quantity":64,"price":17,"timelyPrice":17},
+    {"name":"鰣魚","quantity":80,"price":64,"timelyPrice":64},
+    {"name":"花枝","quantity":10,"price":78,"timelyPrice":78},
+    {"name":"海鰻","quantity":30,"price":54,"timelyPrice":54},
+    {"name":"飛魚","quantity":60,"price":64,"timelyPrice":64},
+    {"name":"白帶魚","quantity":60,"price":76,"timelyPrice":76},
+    {"name":"龍舌","quantity":70,"price":16,"timelyPrice":16},
+    {"name":"青衣","quantity":90,"price":17,"timelyPrice":17},
+    {"name":"鰣魚","quantity":500,"price":49,"timelyPrice":49},
+    {"name":"翻車魚","quantity":2900,"price":73,"timelyPrice":16},
+    {"name":"香魚","quantity":30,"price":17,"timelyPrice":19}
+]

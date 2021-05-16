@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="img" style="background-image: url('../../assets/{{data.name}}.jpg'), url('../../assets/nofish.jpg');"></div>
+    </div>
+    <div class="col-lg-6">
+      <div *ngIf="now; else buy">
+        <form action="">
+          <mat-form-field appearance="fill">
+            <mat-label>漁獲名稱</mat-label>
+            <input matInput [value]="data.name">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>數量</mat-label>
+            <input matInput [value]="data.quantity">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>起價</mat-label>
+            <span matPrefix>$&nbsp;</span>
+            <input matInput [value]="data.price">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>及時價格</mat-label>
+            <span matPrefix>$&nbsp;</span>
+            <input matInput [value]="data.timelyPrice">
+          </mat-form-field>
+          <div>
+            <input style="display:none" id="input-file-id" multiple type="file" />
+            <label for="input-file-id" class="mat-button mat-raised mat-primary">選擇圖片</label>
+          </div>
+          <button type="submit" mat-flat-button color="primary">
+            <div *ngIf="!edit; else new">
+              修改完成
+            </div>
+            <ng-template #new>
+              新增完成
+            </ng-template>
+          </button>
+        </form>
+      </div>
+      <ng-template #buy>
+        <div class="price">
+          現在價格：{{data.timelyPrice}}
+        </div>
+        <mat-grid-list cols="5" rowHeight="1:1">
+          <mat-grid-tile 
+            *ngFor="let item of options" 
+            (click)="handlebuy(item)"
+            class="options"
+            >{{item}}</mat-grid-tile>
+        </mat-grid-list>
+        <form action="">
+          <label for="">自動跟價：</label>
+          <mat-form-field appearance="fill">
+            <mat-label>最高金額</mat-label>
+            <span matPrefix>$&nbsp;</span>
+            <input matInput [value]="data.timelyPrice + 1" #maxprice>
+          </mat-form-field>
+          <button type="button" (click)="autoprice(maxprice.value)" mat-flat-button color="primary">
+            設定完成
+          </button>
+        </form>
+      </ng-template>
+    </div>
+  </div>
+</div>
